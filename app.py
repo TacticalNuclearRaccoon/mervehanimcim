@@ -7,7 +7,7 @@ st.set_page_config(
     layout="wide",
 )
 
-st.image('chonk2.png', width=200)
+st.image('chonk2.png')
 
 
 # ── Data definitions ───────────────────────────────────────────────────────────
