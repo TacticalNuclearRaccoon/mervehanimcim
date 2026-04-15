@@ -23,7 +23,7 @@ FIXED_MEALS = {
     "After Dinner":    ["1 piece of fruit", "1 glass of kefir"],
 }
 
-LUNCH_FIXED          = ["4 tbs vegetables", "2 pieces of breast"]
+LUNCH_FIXED          = ["4 tbs vegetables", "2 pieces of bread"]
 LUNCH_DAIRY_OPTIONS  = ["Yoghurt", "Ayran", "Tzatziki"]
 
 DINNER_PROTEIN_OPTIONS = [
