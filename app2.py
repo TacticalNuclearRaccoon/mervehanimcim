@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-
+import pandas as pd
 import streamlit as st
 
 # ── Page config ────────────────────────────────────────────────────────────────
@@ -57,36 +57,45 @@ def show_fixed(items):
 st.title("🥗 Haftalık diyet planı")
 st.caption("Zayıflayacağız falan böyle...")
 
-# ── Day tabs ───────────────────────────────────────────────────────────────────
-st.header("📅 Bu hafta")
-col1, col2 = st.columns(2)
-with col1:
-    st.subheader("🌅 Kahvaltı")
-    show_fixed(FIXED_MEALS["Breakfast"])
-    st.divider()
-    st.subheader("🍎 Kahvaltıdan Sonra")
-    show_fixed(FIXED_MEALS["After Breakfast"])
-    st.divider()
-    st.subheader("🥗 Öğle Yemeği")
-    show_fixed(LUNCH_FIXED)
-    selected_dairy = st.selectbox(
-        "Dairy option",
-        LUNCH_DAIRY_OPTIONS)
-    st.divider()
-    st.subheader("🥜 Ara öğün")
-    show_fixed(FIXED_MEALS["After Lunch"])
+# ── User interface ───────────────────────────────────────────────────────────────────
+tab_labels = ["Menüler", "Meyve seçenekleri"]
+tabs = st.tabs(tab_labels)
 
-with col2:
-    st.subheader("🍽️ Aksam yemegi")
-    selected_protein = st.selectbox(
-        "Protein",
-        DINNER_PROTEIN_OPTIONS)
-    selected_veg = st.selectbox(
-        "Vegetable",
-        DINNER_VEG_OPTIONS)
-    selected_carb = st.selectbox(
-        "Carbohydrate",
-        DINNER_CARB_OPTIONS)
-    st.divider()
-    st.subheader("🌙 After Dinner")
-    show_fixed(FIXED_MEALS["After Dinner"])
+with tabs[0]:
+    st.header("📅 Bu hafta")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.subheader("🌅 Kahvaltı 9:00 - 9:30")
+        show_fixed(FIXED_MEALS["Breakfast"])
+        st.divider()
+        st.subheader("🍎 Kahvaltıdan Sonra 11:00 - 11:30")
+        show_fixed(FIXED_MEALS["After Breakfast"])
+        st.divider()
+        st.subheader("🥗 Öğle Yemeği 13:00 - 13:30")
+        show_fixed(LUNCH_FIXED)
+        selected_dairy = st.selectbox(
+            "Dairy option",
+            LUNCH_DAIRY_OPTIONS)
+        st.divider()
+        st.subheader("🥜 Ara öğün 15:30 - 16:00")
+        show_fixed(FIXED_MEALS["After Lunch"])
+
+    with col2:
+        st.subheader("🍽️ Aksam yemegi 19:00 - 19:30")
+        selected_protein = st.selectbox(
+            "Protein",
+            DINNER_PROTEIN_OPTIONS)
+        selected_veg = st.selectbox(
+            "Vegetable",
+            DINNER_VEG_OPTIONS)
+        selected_carb = st.selectbox(
+            "Carbohydrate",
+            DINNER_CARB_OPTIONS)
+        st.divider()
+        st.subheader("🌙 After Dinner 21:00 - 21:30")
+        show_fixed(FIXED_MEALS["After Dinner"])
+
+with tabs[1]:
+    st.header("🍎 Meyve seçenekleri")
+    fruits = pd.read_csv("fruits.csv", index_col=0)
+    st.dataframe(fruits)
