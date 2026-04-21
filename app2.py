@@ -14,7 +14,7 @@ st.image('chonk3.png')
 
 # ── Data definitions ───────────────────────────────────────────────────────────
 
-data_path = Path(__file__).parent / "meal_data.json"
+data_path = Path(__file__).parent / "week2.json"
 
 
 def load_meal_data(path: Path):
@@ -33,7 +33,7 @@ meal_data = load_meal_data(data_path)
 
 FIXED_MEALS = meal_data["FIXED_MEALS"]
 LUNCH_FIXED = meal_data["LUNCH_FIXED"]
-LUNCH_DAIRY_OPTIONS = meal_data["LUNCH_DAIRY_OPTIONS"]
+#LUNCH_DAIRY_OPTIONS = meal_data["LUNCH_DAIRY_OPTIONS"]
 DINNER_PROTEIN_OPTIONS = meal_data["DINNER_PROTEIN_OPTIONS"]
 DINNER_VEG_OPTIONS = meal_data["DINNER_VEG_OPTIONS"]
 DINNER_CARB_OPTIONS = meal_data["DINNER_CARB_OPTIONS"]
@@ -41,7 +41,7 @@ DINNER_CARB_OPTIONS = meal_data["DINNER_CARB_OPTIONS"]
 
 def empty_day():
     return {
-        "lunch_dairy":    LUNCH_DAIRY_OPTIONS[0],
+        #"lunch_dairy":    LUNCH_DAIRY_OPTIONS[0],
         "dinner_protein": DINNER_PROTEIN_OPTIONS[0],
         "dinner_veg":     DINNER_VEG_OPTIONS[0],
         "dinner_carb":    DINNER_CARB_OPTIONS[0],
@@ -68,14 +68,14 @@ with tabs[0]:
         st.subheader("🌅 Kahvaltı 9:00 - 9:30")
         show_fixed(FIXED_MEALS["Breakfast"])
         st.divider()
-        st.subheader("🍎 Kahvaltıdan Sonra 11:00 - 11:30")
-        show_fixed(FIXED_MEALS["After Breakfast"])
-        st.divider()
+        #st.subheader("🍎 Kahvaltıdan Sonra 11:00 - 11:30")
+        #show_fixed(FIXED_MEALS["After Breakfast"])
+        #st.divider()
         st.subheader("🥗 Öğle Yemeği 13:00 - 13:30")
         show_fixed(LUNCH_FIXED)
-        selected_dairy = st.selectbox(
-            "Dairy option",
-            LUNCH_DAIRY_OPTIONS)
+        #selected_dairy = st.selectbox(
+        #    "Dairy option",
+        #    LUNCH_DAIRY_OPTIONS)
         st.divider()
         st.subheader("🥜 Ara öğün 15:30 - 16:00")
         show_fixed(FIXED_MEALS["After Lunch"])
