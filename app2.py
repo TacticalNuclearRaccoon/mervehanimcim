@@ -14,7 +14,7 @@ st.image('chonk3.png')
 
 # ── Data definitions ───────────────────────────────────────────────────────────
 
-data_path = Path(__file__).parent / "week2.json"
+data_path = Path(__file__).parent / "week4.json"
 
 
 def load_meal_data(path: Path):
@@ -68,9 +68,9 @@ with tabs[0]:
         st.subheader("🌅 Kahvaltı 9:00 - 9:30")
         show_fixed(FIXED_MEALS["Breakfast"])
         st.divider()
-        #st.subheader("🍎 Kahvaltıdan Sonra 11:00 - 11:30")
-        #show_fixed(FIXED_MEALS["After Breakfast"])
-        #st.divider()
+        st.subheader("🍎 Kahvaltıdan Sonra 11:00 - 11:30")
+        show_fixed(FIXED_MEALS["After Breakfast"])
+        st.divider()
         st.subheader("🥗 Öğle Yemeği 13:00 - 13:30")
         show_fixed(LUNCH_FIXED)
         #selected_dairy = st.selectbox(
