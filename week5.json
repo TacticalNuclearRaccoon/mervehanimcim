@@ -1,0 +1,38 @@
+{
+  "FIXED_MEALS": {
+    "Breakfast": [
+      "1 bardak çay",
+      "1 yumurta",
+      "1 parça peynir",
+      "2 dilim tam buğday ekmeği",
+      "1 yarim avokado",
+      "yesillik falan"
+    ],
+    "After Breakfast": [
+      "1 adet meyve",
+      "2 tam ceviz"
+    ],
+    "After Lunch": [
+      "1 adet meyve",
+      "10 adet badem"
+    ],
+    "Dinner Fixed": [
+      "Salata"
+    ],
+    "After Dinner": [
+      "1 bardak sutun içine cok az zerdeçal, tarçin ve kara biber (ocakta ısıtılmış)"
+    ]
+  },
+  "LUNCH_FIXED": [
+    "et/tavuk/balik yaninda salata"
+  ],
+  "DINNER_PROTEIN_OPTIONS": [
+    "2 yk yogurt"
+  ],
+  "DINNER_VEG_OPTIONS": [
+    "1 kase çorba"
+  ],
+  "DINNER_CARB_OPTIONS": [
+    "1 dilim ekmek"
+  ]
+}

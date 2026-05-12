@@ -14,7 +14,7 @@ st.image('chonk3.png')
 
 # ── Data definitions ───────────────────────────────────────────────────────────
 
-data_path = Path(__file__).parent / "week4.json"
+data_path = Path(__file__).parent / "week5.json"
 
 
 def load_meal_data(path: Path):
@@ -82,6 +82,7 @@ with tabs[0]:
 
     with col2:
         st.subheader("🍽️ Aksam yemegi 19:00 - 19:30")
+        show_fixed(FIXED_MEALS["Dinner Fixed"])
         selected_protein = st.selectbox(
             "Protein",
             DINNER_PROTEIN_OPTIONS)
