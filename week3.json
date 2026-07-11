@@ -1,0 +1,40 @@
+{
+  "FIXED_MEALS": {
+    "Breakfast": [
+      "2 yumurta",
+      "1 parça peynir",
+      "1 dilim tam buğday ekmeği",
+      "1 yarim avokado",
+      "yesillik falan"
+    ],
+    "After Breakfast": [
+      "3 kayısı",
+      "2 tam ceviz",
+      "kahve"
+    ],
+    "After Lunch": [
+      "1 adet meyve",
+      "5 adet badem"
+    ],
+    "After Dinner": [
+      "1 elma, 2 çubuk tarçın, bir tutam maydonoz, 2 bardak suda 15dk kaynatip üzerine limon"
+    ]
+  },
+  "LUNCH_FIXED": [
+    "1 kase özel çorba",
+    "tarifi: 2 kabak, 1 sogan, 2yk silme bulgur, 1/2 demet maydonoz, zeytinyagi, baharatlar. suda pisirip blenderdan gaçir." 
+  ],
+  "DINNER_PROTEIN_OPTIONS": [
+    "Tavuk",
+    "Balık",
+    "Kuru baklagiller (5 tbs)",
+    "Peynir (1 kibrit)",
+    "1 yumurta"
+  ],
+  "DINNER_VEG_OPTIONS": [
+    "Bol yesillikli, domatesli, salatalikli salata"
+  ],
+  "DINNER_CARB_OPTIONS": [
+    "1 dilim ekmek"
+  ]
+}

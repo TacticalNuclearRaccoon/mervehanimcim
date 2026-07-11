@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 import pandas as pd
 import streamlit as st
-
+import glob
 # ── Page config ────────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="Haftalık diyet planı",
@@ -14,7 +14,13 @@ st.image('chonk3.png')
 
 # ── Data definitions ───────────────────────────────────────────────────────────
 
-data_path = Path(__file__).parent / "week5.json"
+menus = glob.glob("*.json")
+
+selected_menu = st.selectbox("Menü seç",menus)
+
+data_path = Path(__file__).parent / f"{selected_menu}"
+
+#st.write(data_path)
 
 
 def load_meal_data(path: Path):
@@ -31,20 +37,20 @@ def load_meal_data(path: Path):
 
 meal_data = load_meal_data(data_path)
 
-FIXED_MEALS = meal_data["FIXED_MEALS"]
-LUNCH_FIXED = meal_data["LUNCH_FIXED"]
-#LUNCH_DAIRY_OPTIONS = meal_data["LUNCH_DAIRY_OPTIONS"]
-DINNER_PROTEIN_OPTIONS = meal_data["DINNER_PROTEIN_OPTIONS"]
-DINNER_VEG_OPTIONS = meal_data["DINNER_VEG_OPTIONS"]
-DINNER_CARB_OPTIONS = meal_data["DINNER_CARB_OPTIONS"]
+FIXED_MEALS = meal_data.get("FIXED_MEALS", {})
+LUNCH_FIXED = meal_data.get("LUNCH_FIXED", [])
+LUNCH_DAIRY_OPTIONS = meal_data.get("LUNCH_DAIRY_OPTIONS", [])
+DINNER_PROTEIN_OPTIONS = meal_data.get("DINNER_PROTEIN_OPTIONS", [])
+DINNER_VEG_OPTIONS = meal_data.get("DINNER_VEG_OPTIONS", [])
+DINNER_CARB_OPTIONS = meal_data.get("DINNER_CARB_OPTIONS", [])
 
 
 def empty_day():
     return {
-        #"lunch_dairy":    LUNCH_DAIRY_OPTIONS[0],
-        "dinner_protein": DINNER_PROTEIN_OPTIONS[0],
-        "dinner_veg":     DINNER_VEG_OPTIONS[0],
-        "dinner_carb":    DINNER_CARB_OPTIONS[0],
+        "lunch_dairy":    LUNCH_DAIRY_OPTIONS[0] if LUNCH_DAIRY_OPTIONS else None,
+        "dinner_protein": DINNER_PROTEIN_OPTIONS[0] if DINNER_PROTEIN_OPTIONS else None,
+        "dinner_veg":     DINNER_VEG_OPTIONS[0] if DINNER_VEG_OPTIONS else None,
+        "dinner_carb":    DINNER_CARB_OPTIONS[0] if DINNER_CARB_OPTIONS else None,
     }
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
@@ -73,16 +79,16 @@ with tabs[0]:
         st.divider()
         st.subheader("🥗 Öğle Yemeği 13:00 - 13:30")
         show_fixed(LUNCH_FIXED)
-        #selected_dairy = st.selectbox(
-        #    "Dairy option",
-        #    LUNCH_DAIRY_OPTIONS)
+        selected_dairy = st.selectbox(
+            "Dairy option",
+            LUNCH_DAIRY_OPTIONS)
         st.divider()
         st.subheader("🥜 Ara öğün 15:30 - 16:00")
         show_fixed(FIXED_MEALS["After Lunch"])
 
     with col2:
         st.subheader("🍽️ Aksam yemegi 19:00 - 19:30")
-        show_fixed(FIXED_MEALS["Dinner Fixed"])
+        #show_fixed(FIXED_MEALS["Dinner Fixed"])
         selected_protein = st.selectbox(
             "Protein",
             DINNER_PROTEIN_OPTIONS)

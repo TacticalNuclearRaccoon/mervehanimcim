@@ -1,0 +1,36 @@
+{
+  "FIXED_MEALS": {
+    "Breakfast": [
+      "1 bardak süt",
+      "3yk granola",
+      "içine 1yk yaban mersini ve 3 tam ceviz"
+    ],
+    "After Breakfast": [
+      "iyi niyet, azim ve cesaret"
+    ],
+    "After Lunch": [
+      "içecek: 1 sise maden suyu, içine maydonoz ve bir dilim ananas. Blender & drink"
+    ],
+    "After Dinner": [
+      "1 bardak sutun içine cok az zerdeçal, tarçin ve kara biber (ocakta ısıtılmış)"
+    ]
+  },
+  "LUNCH_FIXED": [
+    "mantarli ya da kiymali omlet"
+  ],
+  "DINNER_PROTEIN_OPTIONS": [
+    "60g et (2 köfte)",
+    "Tavuk",
+    "Balık",
+    "Kuru baklagiller (5 tbs)",
+    "Peynir (1 kibrit)",
+    "1 yumurta"
+  ],
+  "DINNER_VEG_OPTIONS": [
+    "Salata",
+    "4yk sebze yemegi"
+  ],
+  "DINNER_CARB_OPTIONS": [
+    "1 dilim ekmek"
+  ]
+}
