@@ -14,7 +14,8 @@ st.image('chonk3.png')
 
 # ── Data definitions ───────────────────────────────────────────────────────────
 
-menus = glob.glob("*.json")
+menus_jsons = glob.glob("*.json")
+menus = sorted(menus_jsons)
 
 selected_menu = st.selectbox("Menü seç",menus)
 
