@@ -1,4 +1,10 @@
 {
+  "Breakfast_time": "9:00-9:30",
+  "Lunch_time": "12:30-13:00",
+  "Dinner_time": "19:00-19:30",
+  "After_breakfast_time": "11:00-11:30",
+  "After_lunch_time": "15:30-16:00",
+  "After_dinner_time": "21:00-21:30",
   "FIXED_MEALS": {
     "Breakfast": [
       "1 bardak süt",

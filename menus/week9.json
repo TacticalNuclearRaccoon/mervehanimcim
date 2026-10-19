@@ -1,0 +1,46 @@
+{
+  "Breakfast_time": "11:00-...",
+  "Lunch_time": "...",
+  "Dinner_time": "18:00-...",
+  "After_breakfast_time": "13:00-13:30",
+  "After_lunch_time": "15:00-16:00",
+  "After_dinner_time": "19:00-20:00",
+  "FIXED_MEALS": {
+    "Breakfast": [
+      "1 bardak çay",
+      "2 yumurta (omlet ya da menemen)",
+      "1 avokado",
+      "1 parça peynir",
+      "2 dilim tam buğday ekmeği (ya da bir adet gevrek)",
+      "7-8 adet zeytin",
+      "bol yesillik falan"
+    ],
+    "After Breakfast": [
+      "kahve, yaninda 2 tam ceviz"
+    ],
+    "After Lunch": [
+      "1 adet meyve, yaninda 1 sb süt"
+    ],
+    "After Dinner": [
+      "3 yk yogurt içine az pul biber ve yarim limon"
+    ]
+  },
+  "LUNCH_FIXED": [
+    "ogle yemegi yok 😝 ama kahvalti saat 11:00'de"
+  ],
+    "LUNCH_DAIRY_OPTIONS": [
+        "yok sana dairy options 😝"
+  ],
+  "DINNER_PROTEIN_OPTIONS": [
+    "et",
+    "tavuk",
+    "balık"
+  ],
+  "DINNER_VEG_OPTIONS": [
+   "bol salata"
+  ],
+  "DINNER_CARB_OPTIONS": [
+    "1 dilim tam buğday ekmeği",
+    "1 kase çorba"
+  ]
+}

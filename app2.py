@@ -14,7 +14,7 @@ st.image('chonk3.png')
 
 # ── Data definitions ───────────────────────────────────────────────────────────
 
-menus_jsons = glob.glob("*.json")
+menus_jsons = glob.glob("menus/*.json")
 menus = sorted(menus_jsons)
 
 selected_menu = st.selectbox("Menü seç",menus)
@@ -44,8 +44,12 @@ LUNCH_DAIRY_OPTIONS = meal_data.get("LUNCH_DAIRY_OPTIONS", [])
 DINNER_PROTEIN_OPTIONS = meal_data.get("DINNER_PROTEIN_OPTIONS", [])
 DINNER_VEG_OPTIONS = meal_data.get("DINNER_VEG_OPTIONS", [])
 DINNER_CARB_OPTIONS = meal_data.get("DINNER_CARB_OPTIONS", [])
-
-
+Breakfast_time = meal_data.get("Breakfast_time")
+Lunch_time = meal_data.get("Lunch_time")
+Dinner_time = meal_data.get("Dinner_time")
+After_breakfast_time = meal_data.get("After_breakfast_time")
+After_lunch_time = meal_data.get("After_lunch_time")
+After_dinner_time = meal_data.get("After_dinner_time")
 def empty_day():
     return {
         "lunch_dairy":    LUNCH_DAIRY_OPTIONS[0] if LUNCH_DAIRY_OPTIONS else None,
@@ -72,23 +76,23 @@ with tabs[0]:
     st.header("📅 Bu hafta")
     col1, col2 = st.columns(2)
     with col1:
-        st.subheader("🌅 Kahvaltı 9:00 - 9:30")
+        st.subheader(f"🌅 Kahvaltı {Breakfast_time}")
         show_fixed(FIXED_MEALS["Breakfast"])
         st.divider()
-        st.subheader("🍎 Kahvaltıdan Sonra 11:00 - 11:30")
+        st.subheader(f"🍎 Kahvaltıdan Sonra {After_breakfast_time}")
         show_fixed(FIXED_MEALS["After Breakfast"])
         st.divider()
-        st.subheader("🥗 Öğle Yemeği 13:00 - 13:30")
+        st.subheader(f"🥗 Öğle Yemeği {Lunch_time}")
         show_fixed(LUNCH_FIXED)
         selected_dairy = st.selectbox(
             "Dairy option",
             LUNCH_DAIRY_OPTIONS)
         st.divider()
-        st.subheader("🥜 Ara öğün 15:30 - 16:00")
+        st.subheader(f"🥜 Ara öğün {After_lunch_time}")
         show_fixed(FIXED_MEALS["After Lunch"])
 
     with col2:
-        st.subheader("🍽️ Aksam yemegi 19:00 - 19:30")
+        st.subheader(f"🍽️ Aksam yemegi {Dinner_time}")
         #show_fixed(FIXED_MEALS["Dinner Fixed"])
         selected_protein = st.selectbox(
             "Protein",
@@ -100,7 +104,7 @@ with tabs[0]:
             "Carbohydrate",
             DINNER_CARB_OPTIONS)
         st.divider()
-        st.subheader("🌙 After Dinner 21:00 - 21:30")
+        st.subheader(f"🌙 After Dinner {After_dinner_time}")
         show_fixed(FIXED_MEALS["After Dinner"])
 
 with tabs[1]:
